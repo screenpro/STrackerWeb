@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Dennis Walter">
+    <title>Support Tracker</title>
+	<!--<link rel="icon" href="/images/favicon.png" type="image/x-icon">-->
+    <link id="pagestyle" rel="stylesheet" href="screen.css">
+    <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
+    <script>
+        var nameStore =
+            {   
+                getName: function () {
+                    return JSON.parse(localStorage.getItem("name"));                
+                },
+                setName: function (name) {
+                    localStorage.setItem("x", JSON.stringify(name));
+                },
+            };
+        function replace() {
+            document.getElementById("h1top").innerHTML = "Hello, " + nameStore.getName(name) + "!";
+        }
+        window.onload = document.getElementById("h1top").innerHTML = "Hello, " + nameStore.getName(name) + "!";
+    </script>
+</head>
+
+<body>
+
+    <div id="main">
+        <h1 id="h1top">This text should be replaced on page load, but currently, it is not.<br>Click the button below to replace it manually!</h1>
+    </div>
+
+    <button onclick="replace()">Test name storage and text rewrite</button>
+
+</body>
+
+</html>

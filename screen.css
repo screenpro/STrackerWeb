@@ -34,9 +34,11 @@ body
 /* --------------- div styles --------------- */
 
 #splash {
+    position: relative;
+	min-height: 100%;
     background-color: #ffffff;
-    height: 100%;
     padding-top: 20vh;
+    overflow: hidden;
 }
 
 #logo {
@@ -53,6 +55,10 @@ body
     border-radius: 12px;
     box-shadow: 0 0 50px #999;
     background-color: #f8f8f8;
+}
+
+#main {
+        height: 100px;
 }
 
 /* --------------- table styles ---------------- */
@@ -108,9 +114,6 @@ td.text {
 }
 
 td.card {   
-    /*border-radius: 12px;
-    box-shadow: 0 0 10px #999;
-    background-color: #eee;*/
     width: 200px;
     max-height: 200px;
     padding: 20px 5px 14px 5px;
@@ -141,6 +144,10 @@ img.profile {
 
 h1 {
     margin-right: 30px;
+}
+
+#h1top {
+
 }
 
 p

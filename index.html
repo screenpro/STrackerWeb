@@ -9,9 +9,20 @@
 	<!--<link rel="icon" href="/images/favicon.png" type="image/x-icon">-->
     <link id="pagestyle" rel="stylesheet" href="screen.css">
     <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
+    <script>
+        var nameStore =
+            {
+                getName: function () {
+                    return JSON.parse(localStorage.getItem("name"));                
+                },
+                setName: function (name) {
+                    localStorage.setItem("name", JSON.stringify(name));
+                },
+            };
+    </script>
 </head>
 
-<body>
+<body style="overflow: hidden;"S>
     <div id="splash">
         <div id="logo">
             <h1>Support Tracker | <b>screenpro</b></h1>
@@ -21,9 +32,9 @@
                 <tr>
                     <td class="text"><h1>Login</h1><br><p>Please click on your picture to log in!</p></td>
                     <!--<td class="card"><img class="profile" src="images/dennis.jpeg"></td>-->
-                    <td id="dennis"><a class="hover" href="#">Dennis</a></td>
+                    <td id="dennis"><a class="hover" href="stracker.html" onclick="nameStore.setName('Dennis')">Dennis</a></td>
                     <td class="spacer"></td>
-                    <td id="mike"><a class="hover" href="#">Mike</a></td>
+                    <td id="mike"><a class="hover" href="stracker.html" onclick="nameStore.setName('Mike')">Mike</a></td>
                     <!--<td class="card"><img class="profile" src="images/dennis.jpeg"></td>-->
                 </tr>
             </table>
