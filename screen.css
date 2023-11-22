@@ -36,32 +36,47 @@ body
 #splash {
     position: relative;
 	min-height: 100%;
-    background-color: #ffffff;
-    padding-top: 20vh;
     overflow: hidden;
-}
-
-#logo {
-    float: right;
-    margin-top: -18.5vh;
+    background-color: rgb(0,0,0,0.3);
 }
 
 #login {
     max-width: fit-content;
     max-height: fit-content;
-    margin: auto;
+    margin: 20vh auto;
     padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    box-shadow: 0 0 50px #999;
+    /*border: 1px solid #ddd;*/
+    border-bottom: 8px solid #DC0814;
+    border-radius: 0px;
+    /*box-shadow: 0 0 25px #555;*/
     background-color: #f8f8f8;
+    opacity: 1;
 }
 
 #main {
-        height: 100px;
+    max-height: fit-content;
 }
 
-/* --------------- table styles ---------------- */
+#topbarl {
+    background-color: rgb(0,0,0,0.7);
+    height: 50px;
+    padding: 5px 15px;
+    box-shadow: 0 0 10px #000;
+    border-bottom: 1px solid #555;
+}
+
+#topbar {
+    background-color: rgb(0,0,0,1);
+    height: 50px;
+    padding: 5px 15px;
+    box-shadow: 0 0 10px #000;
+    border-bottom: 1px solid #555;
+}
+
+.boxList {
+    border: 1px solid red;
+    padding: 10px;
+}
 
 #dennis {
     width: 200px;
@@ -107,6 +122,15 @@ body
     transition: transform 0.5s;
 }
 
+.kunde {
+    max-width: fit-content;
+    max-height: fit-content;
+    margin: 50px auto 0px auto;
+    border: 1px solid #f0f;
+}
+
+/* --------------- table styles ---------------- */
+
 td.text {
     width: 190px;
     padding: 0px 30px 20px 0px;
@@ -132,6 +156,22 @@ td.spacer {
     width: 20px;
 }
 
+th {
+    text-align: left;
+}
+.date {
+    width: 200px;
+}
+
+.reason {
+    width: 600px;
+}
+
+.time {
+    width:200px;
+    text-align: right;
+}
+
 /* --------------- image styles ----------------- */
 
 img.profile {
@@ -147,7 +187,8 @@ h1 {
 }
 
 #h1top {
-
+    color: #fff;
+    font-weight: 300;
 }
 
 p
@@ -164,7 +205,7 @@ p.hover {
     color: #fff;
 }
 
-p.hover:hover{
+p.hover:hover {
     opacity: 0.6;
 }
 
@@ -177,14 +218,14 @@ a
 a.hover {
     font-size: 40px;
     line-height: 200px;
-    opacity: 0;
-    background-color: #000;
+    background-color: rgb(0,0,0,0);
     border-radius: 100px;
-    color: #fff;
+    color: rgb(255,255,255,0);
 }
 
-a.hover:hover{
-    opacity: 0.6;
+a.hover:hover {
+    background-color: rgb(0,0,0,0.6);
+    color: rgb(255,255,255,1);
 }
 
 /* --------------- list styles --------------- *
@@ -198,6 +239,19 @@ a
 }
 
 /* --------------- misc styles --------------- */
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 1;
+  }
 
 /* =============== MEDIA QUERIES =============== */
 

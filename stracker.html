@@ -10,29 +10,134 @@
     <link id="pagestyle" rel="stylesheet" href="screen.css">
     <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
     <script>
-        var nameStore =
-            {   
-                getName: function () {
-                    return JSON.parse(localStorage.getItem("name"));                
-                },
-                setName: function (name) {
-                    localStorage.setItem("x", JSON.stringify(name));
-                },
-            };
+        var nameStore = {   
+            getName: function () {
+                return JSON.parse(localStorage.getItem("name"));                
+            },
+            setName: function (name) {
+                localStorage.setItem("name", JSON.stringify(name));
+            },
+        };
         function replace() {
             document.getElementById("h1top").innerHTML = "Hello, " + nameStore.getName(name) + "!";
-        }
-        window.onload = document.getElementById("h1top").innerHTML = "Hello, " + nameStore.getName(name) + "!";
+        }; 
+        function assign() {
+                let box = document.createElement('div');
+                box.classList.add('kunde');
+                box.innerHTML = '<div> \
+                    <table>  \
+                        <thead>  \
+                            <tr>  \
+                                <td colspan="3">  \
+                                    <label for="TKB">Thurgauer Kantonalbank</label>  \
+                                    <input type="checkbox" name="accounting" id="accounting" data-toggle="toggle">  \
+                                </td>  \
+                            </tr>  \
+                        </thead>  \
+                        <tbody>  \
+                            <tbody class="labels">  \
+                                <tr>  \
+                                    <th class="date">Datum</th>  \
+                                    <th class="reason">Supportgrund</th>  \
+                                    <th class="time">Zeitaufwand</th>  \
+                                </tr>  \
+                            </tbody>  \
+                            <tbody class="hide">  \
+                                <tr>  \
+                                    <td class="date">20.11.2023</td>  \
+                                    <td class="reason">MagicInfo</td>  \
+                                    <td class="time">1:00</td>  \
+                                </tr>  \
+                                <tr>  \
+                                    <td class="date">22.11.2023</td>  \
+                                    <td class="reason">Displaystörung</td>  \
+                                    <td class="time">1:30</td>  \
+                                </tr>  \
+                            </tbody>  \
+                        </tbody>  \
+                    </table> \
+                    </div>';
+                document.body.appendChild(box);
+        };
     </script>
 </head>
 
-<body>
+<body onload="replace()">
 
     <div id="main">
-        <h1 id="h1top">This text should be replaced on page load, but currently, it is not.<br>Click the button below to replace it manually!</h1>
+        <div id="topbar">
+            <h1 id="h1top">Hallo, NAME!</h1>
+        </div>
+        <div id="content">
+            <div class="kunde">
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="3">
+                                <label for="TKB">Thurgauer Kantonalbank</label>
+                                <input type="checkbox" name="accounting" id="accounting" data-toggle="toggle">
+                            </td>
+                        </tr>   
+                    </thead>
+                    <tbody>
+                        <tbody class="labels">
+                            <tr>
+                                <th class="date">Datum</th>
+                                <th class="reason">Supportgrund</th>
+                                <th class="time">Zeitaufwand</th>
+                            </tr>
+                        </tbody>
+                        <tbody class="hide">
+                            <tr>
+                                <td class="date">20.11.2023</td>
+                                <td class="reason">MagicInfo</td>
+                                <td class="time">1:00</td>
+                            </tr>
+                            <tr>
+                                <td class="date">22.11.2023</td>
+                                <td class="reason">Displaystörung</td>
+                                <td class="time">1:30</td>
+                            </tr>
+                        </tbody>	
+                    </tbody>
+                </table>   
+            </div>
+            <div class="kunde">
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="3">
+                                <label for="TKB">Thurgauer Kantonalbank</label>
+                                <input type="checkbox" name="accounting" id="accounting" data-toggle="toggle">
+                            </td>
+                        </tr>   
+                    </thead>
+                    <tbody>
+                        <tbody class="labels">
+                            <tr>
+                                <th class="date">Datum</th>
+                                <th class="reason">Supportgrund</th>
+                                <th class="time">Zeitaufwand</th>
+                            </tr>
+                        </tbody>
+                        <tbody class="hide">
+                            <tr>
+                                <td class="date">20.11.2023</td>
+                                <td class="reason">MagicInfo</td>
+                                <td class="time">1:00</td>
+                            </tr>
+                            <tr>
+                                <td class="date">22.11.2023</td>
+                                <td class="reason">Displaystörung</td>
+                                <td class="time">1:30</td>
+                            </tr>
+                        </tbody>	
+                    </tbody>
+                </table>   
+            </div>                  
+        </div>
+        <input type="button" id="assign" onclick="assign()" value="Assign">
     </div>
-
-    <button onclick="replace()">Test name storage and text rewrite</button>
 
 </body>
 
