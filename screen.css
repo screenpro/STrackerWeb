@@ -45,16 +45,16 @@ body
     max-height: fit-content;
     margin: 20vh auto;
     padding: 30px;
-    /*border: 1px solid #ddd;*/
     border-bottom: 8px solid #DC0814;
     border-radius: 0px;
-    /*box-shadow: 0 0 25px #555;*/
     background-color: #f8f8f8;
     opacity: 1;
 }
 
 #main {
     max-height: fit-content;
+    width: 100%;
+    /*background-color: rgb(0,0,0,1);*/
 }
 
 #topbarl {
@@ -66,16 +66,11 @@ body
 }
 
 #topbar {
-    background-color: rgb(0,0,0,1);
+    background-color: rgb(0,0,0,0.7);
     height: 50px;
     padding: 5px 15px;
     box-shadow: 0 0 10px #000;
     border-bottom: 1px solid #555;
-}
-
-.boxList {
-    border: 1px solid red;
-    padding: 10px;
 }
 
 #dennis {
@@ -125,8 +120,9 @@ body
 .kunde {
     max-width: fit-content;
     max-height: fit-content;
-    margin: 50px auto 0px auto;
+    margin: 30px auto 0px auto;
     border: 1px solid #f0f;
+    background-color: #fff;
 }
 
 /* --------------- table styles ---------------- */
@@ -251,7 +247,34 @@ a
     bottom: 0;
     z-index: -1;
     opacity: 1;
-  }
+}
+
+/*#bg-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.25;
+}*/
+
+
+#assign {
+    float: right;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: -110px 40px 0px 0px;
+    background-color: #DC0814;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+}
 
 /* =============== MEDIA QUERIES =============== */
 
