@@ -1,22 +1,20 @@
 const cTest = [];
-const Data0 = [];
-const Data1 = [];
+const cData= [];
 
 cTest.push("Credit Suisse", "Thurgauer Kantonalbank")
-Data0.push("20.11.2023 Display 1:00", "22.11.2023 MagicInfo 1:30")
-Data1.push("10.11.2023 Stromausfall 4:00", "15.11.2023 MagicInfo 0:30", "19.11.2023 Contentfehler 2:00", "21.11.2023 Bedienerfehler 0:30")
+cData.push(["20.11.2023 Display 1:00", "22.11.2023 MagicInfo 1:30"], ["10.11.2023 Stromausfall 4:00", "15.11.2023 MagicInfo 0:30", "19.11.2023 Contentfehler 2:00", "21.11.2023 Bedienerfehler 0:30"])
 
 var nameStore = {   
     getName: function () {
-        return JSON.parse(localStorage.getItem("name"));                
+        return JSON.parse(localStorage.getItem("user"));                 
     },
-    setName: function (name) {
-        localStorage.setItem("name", JSON.stringify(name));
+    setName: function (user) {
+        localStorage.setItem("user", JSON.stringify(user));
     },
 };
 
 function replace() {
-    document.getElementById("h1top").innerHTML = "Hello, " + nameStore.getName(name) + "!";
+    document.getElementById("h1top").innerHTML = "Hello, " + nameStore.getName() + "!";
 };
 
 function tableBuilder(cName) {
@@ -58,27 +56,27 @@ function endBuilder() {
     </table> \ </div>';
 }
 
-function mainBuilder() {
-    var mainString;
+function mainBuilder(customer, num) {
+    var mainString = "";
     var headString = headBuilder();
-    var detailString;
+    var detailString = "";
     var endString = endBuilder();
-    let cLength = cTest.length;
-    for (i = 0; i < cLength; i++) {
-        mainString = tableBuilder(cTest[i]);
-        let tLength = Data0.length;
-        for (a = 0; a < tLength; a++) {
-            let details = Data0[a];
-            let values = details.split(" ");
-            detailString += stringBuilder(values[0], values[1], values[2]);
-        }
-        return mainString + headString + detailString + endString;
+    mainString = tableBuilder(customer);
+    let tLength = num.length;
+    for (a = 0; a < tLength; a++) {
+        let details = num[a];
+        let values = details.split(" ");
+        detailString += stringBuilder(values[0], values[1], values[2]);
     }
+    return mainString + headString + detailString + endString;
 }
 
 function asyncBuilder() {
-    let cTable = document.createElement('div');
-    cTable.classList.add('kunde');
-    cTable.innerHTML = mainBuilder();
-    document.body.appendChild(cTable);
+    let cLength = cTest.length;
+    for (i = 0; i < cLength; i++) {
+        let cTable = document.createElement('div');
+        cTable.classList.add('kunde');
+        cTable.innerHTML = mainBuilder(cTest[i], cData[i]);
+        document.body.appendChild(cTable);
+    }
 }
